@@ -7,6 +7,7 @@ return {
   dependencies = {
     'nvim-tree/nvim-web-devicons',
   },
+  lazy = false,
   keys = {
     { '<leader>e', '<cmd>NvimTreeToggle<CR>', desc = 'Toggle NvimTree' },
   },
@@ -17,12 +18,22 @@ return {
     renderer = {
       icons = {
         show = {
-          file = vim.g.have_nerd_font,
-          folder = vim.g.have_nerd_font,
-          folder_arrow = vim.g.have_nerd_font,
-          git = vim.g.have_nerd_font,
+          file = true,
+          folder = true,
+          folder_arrow = true,
+          git = true,
         },
       },
     },
   },
+  config = function(_, opts)
+    require('nvim-tree').setup(opts)
+
+    -- Open nvim-tree on startup
+    vim.api.nvim_create_autocmd('VimEnter', {
+      callback = function()
+        require('nvim-tree.api').tree.open()
+      end,
+    })
+  end,
 }
