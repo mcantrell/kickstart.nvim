@@ -50,3 +50,11 @@ This document tracks the most useful keybindings in your current configuration.
 | `<leader>hs` | [H]unk [S]tage |
 | `<leader>hr` | [H]unk [R]eset |
 | `<leader>hp` | [H]unk [P]review |
+
+## 💻 Terminal (ToggleTerm)
+| Keymap | Description |
+| --- | --- |
+| `<C-\>` | Toggle Terminal panel (bottom) |
+| `<Esc><Esc>` | Exit Terminal mode (to Normal mode) |
+| `jk` | Exit Terminal mode (alternative) |
+| `<C-h/j/k/l>` | Navigate out of terminal to other windows |
